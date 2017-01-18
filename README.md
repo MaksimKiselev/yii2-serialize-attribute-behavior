@@ -1,10 +1,9 @@
 Yii2 Serialize Attribute Behavior
-===================================
+=================================
 
-This Yii2 ActiveRecord behavior allows you to store serialized values in attributes.
+This Yii 2.0 ActiveRecord behavior allows you to store serialized values in attributes.
 
-Installation
-------------
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -22,17 +21,18 @@ or add
 
 to the require section of your `composer.json` file.
 
-Usage
------
+## Usage
 
-Behavior will add property to your Active Record class with name "$attribute . $unserializedAttributeSuffix".
+Behavior adds property named "$attribute . $unserializedAttributeSuffix" to your ActiveRecord class.
  
-You can get deserialized property value like ```$model->propertyArray```.
+You can get unserialized property value like `$model->propertyArray`.
 
-You can set deserialized property value like ```$model->propertyArray = []```.
+You can set unserialized property value like `$model->propertyArray = []`.
 
-* #####Basic
-If you want only to serialize and unserialize attribute use config like this:
+### Basic
+
+If you want to just serialize and unserialize attribute use a config like the following:
+
 ```php
 public function behaviors()
 {
@@ -48,8 +48,10 @@ public function behaviors()
 }
 ```
 
-* #####Advanced
+### Advanced
+
 If you need more flexible logic, you may configure behavior like this:
+
 ```php
 public function behaviors()
 {
@@ -69,23 +71,19 @@ public function behaviors()
     ];
 }
 ```
-In this example ```MyModel``` must contain attributes, rules, and more.
 
-This was made for support ```ActiveField``` for deserialized attributes.
+In the example above `MyModel` must contain attributes, rules, and more in order to support `ActiveField` attributes unserialization.
 
 For example:
+
 ```php
 <?= $form->field($model, 'activeRecordModelAttribute')->textInput(); ?>
 <?= $form->field($model->dataModel, 'MyModelAttribute')->textInput(); ?>
 ```
 
 
-Use cases
------
+## Use cases
 
-* This behavior was develop primarily for use with json PostgreSQL/MariaDB columns
 
-* Also you may use it for store any serialized data as text (thank you captain obvious :smile:)
-
------
-p.s. Sorry for my English :us:
+* This behavior was developed primarily for use with JSON in PostgreSQL and MariaDB columns.
+* You may use it to store any serialized data as text.
