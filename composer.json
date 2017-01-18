@@ -1,0 +1,32 @@
+{
+    "name": "mkiselev/yii2-serialize-attribute-behavior",
+    "description": "Yii2 serialize attribute behavior",
+    "keywords": [
+        "yii",
+        "yii2",
+        "serialize",
+        "serialized",
+        "attribute",
+        "attributes",
+        "behavior",
+        "array",
+        "json"
+    ],
+    "type": "yii2-extension",
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksim Kiselev",
+            "email": "maks280795@yandex.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "mkiselev\\serialized\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
